@@ -13,7 +13,7 @@ struct Timeout(ResultType)
     when res = @result.receive
       @timeout_indicator.close
       return res
-    when @timeout_indicator.receive?
+    when @timeout_indicator.receive
       raise Timeout::Reached.new @time
     end
   end
