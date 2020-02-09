@@ -1,0 +1,9 @@
+name: timeout
+version: 0.1.0
+
+authors:
+  - D. Scott Boggs <scott@tams.tech>
+
+crystal: 0.32.1
+
+license: MIT
