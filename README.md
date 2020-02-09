@@ -1,6 +1,5 @@
 # timeout
-
-TODO: Write a description here
+A VERY simple library for timing-out a potentially infinitely-running function call
 
 ## Installation
 
@@ -9,7 +8,7 @@ TODO: Write a description here
    ```yaml
    dependencies:
      timeout:
-       github: your-github-user/timeout
+       github: dscottboggs/timeout
    ```
 
 2. Run `shards install`
@@ -18,22 +17,23 @@ TODO: Write a description here
 
 ```crystal
 require "timeout"
+
+Timeout(String).try_for 1.second do
+  # some maybe long-running code
+end
 ```
 
-TODO: Write usage instructions here
-
-## Development
-
-TODO: Write development instructions here
+Unfortunately, for now you must specify the return-type of the block, due to a restriction in Crystal's type system.
 
 ## Contributing
 
-1. Fork it (<https://github.com/your-github-user/timeout/fork>)
+1. Fork it (<https://github.com/dscottboggs/timeout/fork>)
 2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+3. Commit your changes (`git commit -am 'Add some feature'`).
+4. Run `crystal tool format` and `crystal spec` on the project.
+5. Push to the branch (`git push origin my-new-feature`)
+6. Create a new Pull Request
 
 ## Contributors
 
-- [D. Scott Boggs](https://github.com/your-github-user) - creator and maintainer
+- [D. Scott Boggs](https://github.com/dscottboggs) - creator and maintainer
